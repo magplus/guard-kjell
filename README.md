@@ -1,6 +1,6 @@
 # Guard::Kjell
 
-TODO: Write a gem description
+Kjell runs a shell command once when watched files change.
 
 ## Installation
 
@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your Guardfile:
+
+```
+guard 'kjell', cmd: "echo Kjello World!", :all_on_start => true do
+  watch(%r{^lib/})
+end
+```
 
 ## Contributing
 

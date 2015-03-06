@@ -6,18 +6,17 @@ require 'guard/kjell/version'
 Gem::Specification.new do |spec|
   spec.name          = "guard-kjell"
   spec.version       = Guard::Kjell::VERSION
-  spec.authors       = ["Martin Svalin"]
-  spec.email         = ["martin@lite.nu"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.authors       = ["Kristoffer Roupé", "Karl Eklund", "Martin Svalin"]
+  spec.email         = ["kristoffer@magplus.com", "karl@magplus.com", "martin@magplus.com"]
+  spec.summary       = %q{Run a command once when files change}
+  spec.description   = %q{Run a command once when files change. Implemented because guard-shell was NIH, and ran commands for each file. Sorry.}
+  spec.homepage      = "http://github.com/magplus/guard-kjell"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "guard-compat"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
 end
